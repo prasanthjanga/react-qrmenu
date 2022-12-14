@@ -1,14 +1,28 @@
-import './App.css';
+import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import ColorContextProvider from './context/ColorContext';
-import { ToggleColorMode } from './components/ToggleColorMode';
+import ColorContextProvider from "./context/ColorContext";
+
+import AppBarHeader from "./layouts/AppBarHeader";
+
+import Container from "@mui/material/Container";
+import AppBarFooter from "./layouts/AppBarFooter";
+import { Home } from "./pages/Home";
+import { Profile } from "./pages/Profile";
 
 function App() {
   return (
     <>
-      <h1>Welcome to My App!</h1>
       <ColorContextProvider>
-        <ToggleColorMode />
+        <Container fixed>
+          <AppBarHeader />
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="profile" element={<Profile />} />
+          </Routes>
+
+        </Container>
+        <AppBarFooter />
       </ColorContextProvider>
     </>
   );

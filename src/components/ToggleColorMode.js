@@ -14,7 +14,6 @@ export const ToggleColorMode = () => {
 
     return (
         <>
-            {themeMode} mode
             <IconButton sx={{ ml: 1 }} onClick={colorMode} color="inherit">
                 {themeMode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
             </IconButton>

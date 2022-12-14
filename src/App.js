@@ -8,6 +8,7 @@ import Container from "@mui/material/Container";
 import AppBarFooter from "./layouts/AppBarFooter";
 import { Home } from "./pages/Home";
 import { Profile } from "./pages/Profile";
+import { Notifications } from "./pages/Notifications";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="profile" element={<Profile />} />
+            <Route path="notifications" element={<Notifications />} />
           </Routes>
 
         </Container>

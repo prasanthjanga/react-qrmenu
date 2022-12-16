@@ -1,7 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Link from "@mui/material/Link";
-
+import { NavLink } from "react-router-dom";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import StorefrontIcon from "@mui/icons-material/Storefront";
@@ -10,7 +9,6 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 function AppBarFooter() {
-  const [value, setValue] = React.useState(0);
 
   return (
     <Box>
@@ -22,25 +20,26 @@ function AppBarFooter() {
           color: "#000",
           boxShadow: "0px -6px 30px rgb(19 15 38 / 9%)",
           borderRadius: "5px 5px 0px 0px",
-        }}
-        showLabels
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
+          "& .MuiBottomNavigationAction-root > svg": {
+            color: "grey.main",
+          },
+          "& a.active > .MuiBottomNavigationAction-root > svg": {
+            color: "primary.main",
+          },
         }}
       >
-        <Link href="/" color="secondary" underline="none">
-          <BottomNavigationAction sx={{paddingTop: "15px"}} icon={<StorefrontIcon />} />
-        </Link>
-        <Link href="orders" color="secondary" underline="none">
-          <BottomNavigationAction sx={{paddingTop: "15px"}} icon={<ListAltIcon />} />
-        </Link>
-        <Link href="notifications" color="secondary" underline="none">
-          <BottomNavigationAction sx={{paddingTop: "15px"}} icon={<NotificationsIcon />} />
-        </Link>
-        <Link href="profile" color="secondary" underline="none">
-          <BottomNavigationAction sx={{paddingTop: "15px"}} icon={<AccountCircleIcon />} />
-        </Link>
+        <NavLink to="/" underline="none">
+          <BottomNavigationAction sx={{ paddingTop: "15px" }} label="Home" icon={<StorefrontIcon />} />
+        </NavLink>
+        <NavLink to="orders" underline="none">
+          <BottomNavigationAction sx={{ paddingTop: "15px" }} label="Orders" icon={<ListAltIcon />} />
+        </NavLink>
+        <NavLink to="notifications" underline="none">
+          <BottomNavigationAction sx={{ paddingTop: "15px" }} label="Notifications" icon={<NotificationsIcon />} />
+        </NavLink>
+        <NavLink to="profile" underline="none">
+          <BottomNavigationAction sx={{ paddingTop: "15px" }} label="Profile" icon={<AccountCircleIcon />} />
+        </NavLink>
       </BottomNavigation>
     </Box>
   );

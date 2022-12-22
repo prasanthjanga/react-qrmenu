@@ -1,6 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import StorefrontIcon from "@mui/icons-material/Storefront";
@@ -9,6 +10,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 function AppBarFooter() {
+  const [value, setValue] = React.useState(0);
 
   return (
     <Box>
@@ -27,19 +29,34 @@ function AppBarFooter() {
             color: "primary.main",
           },
         }}
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
       >
-        <NavLink to="/" underline="none">
-          <BottomNavigationAction sx={{ paddingTop: "15px" }} label="Home" icon={<StorefrontIcon />} />
-        </NavLink>
-        <NavLink to="orders" underline="none">
-          <BottomNavigationAction sx={{ paddingTop: "15px" }} label="Orders" icon={<ListAltIcon />} />
-        </NavLink>
-        <NavLink to="notifications" underline="none">
-          <BottomNavigationAction sx={{ paddingTop: "15px" }} label="Notifications" icon={<NotificationsIcon />} />
-        </NavLink>
-        <NavLink to="profile" underline="none">
-          <BottomNavigationAction sx={{ paddingTop: "15px" }} label="Profile" icon={<AccountCircleIcon />} />
-        </NavLink>
+        <BottomNavigationAction
+          component={Link}
+          to="/"
+          icon={<StorefrontIcon />}
+        />
+
+        <BottomNavigationAction
+          component={Link}
+          to="orders"
+          icon={<ListAltIcon />}
+        />
+
+        <BottomNavigationAction
+          component={Link}
+          to="notifications"
+          icon={<NotificationsIcon />}
+        />
+
+        <BottomNavigationAction
+          component={Link}
+          to="profile"
+          icon={<AccountCircleIcon />}
+        />
       </BottomNavigation>
     </Box>
   );

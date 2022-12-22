@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <ColorContextProvider>
-        <Container fixed>
+        <Container fixed sx={{ marginBottom: '80px' }}>
           <AppBarHeader />
 
           <Routes>

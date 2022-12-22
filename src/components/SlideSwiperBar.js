@@ -2,7 +2,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper";
 import "swiper/css/bundle";
 
-import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 
 import LunchDiningIcon from "@mui/icons-material/LunchDining";
@@ -19,8 +18,8 @@ export const SlideSwiperBar = () => {
 
   return (
     <>
-      <Box sx={{ height: "20px" }}></Box>
       <Swiper
+        className="mt-3"
         slidesPerView={"auto"}
         spaceBetween={10}
         modules={[FreeMode]}

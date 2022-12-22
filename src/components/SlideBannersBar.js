@@ -2,13 +2,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper";
 import "swiper/css/bundle";
 
-import Box from "@mui/material/Box";
-
 export const SlideBannersBar = () => {
   return (
     <>
-      <Box sx={{ height: "20px" }}></Box>
       <Swiper
+        className="mt-2"
         slidesPerView={"auto"}
         spaceBetween={10}
         modules={[FreeMode]}

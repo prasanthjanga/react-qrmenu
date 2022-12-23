@@ -23,3 +23,11 @@
 .fw-500 {
     font-weight: 500;
 }
+
+.w-27 {
+    width: 27% !important;
+}
+
+.fs-120 {
+    font-size: 120%;
+}

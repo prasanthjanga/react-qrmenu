@@ -1,34 +1,37 @@
-import List from "@mui/material/List";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import NotificationsIcon from "@mui/icons-material/Notifications";
+import Box from "@mui/material/Box";
+import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 
 export const Notifications = () => {
   const date = new Date().toDateString();
 
   return (
     <>
-      <List sx={{ width: "100%", align: "justify" }}>
-        <ListItemButton>
-          <ListItemIcon>
-            <NotificationsIcon />
-          </ListItemIcon>
-          <ListItemText
-            primary={date}
-            secondary="It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-          />
-        </ListItemButton>
-        <ListItemButton>
-          <ListItemIcon>
-            <NotificationsIcon />
-          </ListItemIcon>
-          <ListItemText
-            primary={date}
-            secondary="Many desktop publishing packages and web page editors now use."
-          />
-        </ListItemButton>
-      </List>
+      <Box>
+        <ul className="list-unstyled">
+          <li className="p-2 border-bottom">
+            <div className="d-flex flex-row align-items-center justify-content-between">
+              <span className="flex-grow text-truncate fw-bold pe-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem pariatur obcaecati sequi.</span>
+              <small className="d-flex flex-row align-itmes-center flex-shrink-0 text-muted">
+                <AccessTimeOutlinedIcon fontSize="small" className="me-1" /> 01:00 AM
+              </small>
+            </div>
+            <div className="text-justify text-wrap text-break py-1">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis asperiores illum, iusto ipsa perspiciatis dolore?
+            </div>
+          </li>
+          <li className="p-2 border-bottom">
+            <div className="d-flex flex-row align-items-center justify-content-between">
+              <span className="flex-grow text-truncate fw-bold pe-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem pariatur obcaecati sequi.</span>
+              <small className="d-flex flex-row align-itmes-center flex-shrink-0 text-muted">
+                <AccessTimeOutlinedIcon fontSize="small" className="me-1" /> 01:00 AM
+              </small>
+            </div>
+            <div className="text-justify text-wrap text-break py-1">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis asperiores illum, iusto ipsa perspiciatis dolore?
+            </div>
+          </li>
+        </ul>
+      </Box>
     </>
   );
 };

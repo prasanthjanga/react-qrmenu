@@ -11,7 +11,7 @@ export const ItemCard = ({ item }) => {
             <img src={item?.image} alt={item?.name} className="card-img-top" />
           </div>
           <div className="card-body pb-0">
-            <span className="fs-3 fw-bold d-inline-block mw-100 text-truncate">
+            <span className="fs-120 fw-bold d-inline-block mw-100 text-truncate">
               {item?.name}
             </span>
             <div className="small">{item?.category}</div>

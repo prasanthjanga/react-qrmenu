@@ -5,10 +5,9 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 export const ItemCardList = ({item}) => {
   return (
     <>
-      <div className="mt-4">
         <Box
           sx={{ backgroundColor: "grey.900" }}
-          className="d-flex mw-100 shadow-sm"
+          className="d-flex mw-100 shadow-sm mt-4"
         >
           <div className="flex-shrink-0 ratio ratio-1x1 w-27">
             <img
@@ -17,9 +16,10 @@ export const ItemCardList = ({item}) => {
               alt={item?.name}
             />
           </div>
-          <div className="flex-grow-1 p-3 d-flex flex-column justify-content-between">
-            <div>
-              <h5 className="card-title">{item?.name}</h5>
+          <div className="flex-grow-1"style={{maxWidth: "73%"}}>
+            <div className="mw-100 px-3 py-2 d-flex flex-column justify-content-between">
+            <div className="card-body ">
+              <div className="fw-bold fs-5 text-truncate">{item?.name}</div>
               <div className="small">{item?.category}</div>
             </div>
             <div className="card-text d-flex flex-row align-items-center justify-content-between">
@@ -34,9 +34,9 @@ export const ItemCardList = ({item}) => {
                 <ShoppingCartIcon />
               </IconButton>
             </div>
+            </div>
           </div>
         </Box>
-      </div>
     </>
   );
 };

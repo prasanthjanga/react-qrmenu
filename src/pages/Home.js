@@ -36,7 +36,9 @@ export const Home = () => {
       </div>
       <div className="row row-cols-1 row-cols-lg-2">
         {items.map((item) => (
-          <ItemCardList className="col" key={item.id} item={item} />
+          <div className="col">
+            <ItemCardList key={item.id} item={item} />
+          </div>
         ))}
       </div>
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-xl-4">

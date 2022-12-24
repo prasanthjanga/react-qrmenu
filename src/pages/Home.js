@@ -15,7 +15,7 @@ export const Home = () => {
       <SearchBar />
       <SlideSwiperBar />
       <SlideBannersBar />
-      <div className="d-flex flex-row align-items-center justify-content-between mt-4 mb-0">
+      <div className="d-flex flex-row align-items-center justify-content-between py-2">
         <h4>Menu</h4>
         <div>
           <div
@@ -36,14 +36,16 @@ export const Home = () => {
       </div>
       <div className="row row-cols-1 row-cols-lg-2">
         {items.map((item) => (
-          <div className="col">
-            <ItemCardList key={item.id} item={item} />
+          <div className="col" key={item.id}>
+            <ItemCardList item={item} />
           </div>
         ))}
       </div>
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-xl-4">
         {items.map((item) => (
-          <ItemCard className="col" key={item.id} item={item} />
+          <div className="col" key={item.id}>
+            <ItemCard item={item} />
+          </div>
         ))}
       </div>
     </>

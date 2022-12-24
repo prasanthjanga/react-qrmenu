@@ -6,7 +6,7 @@ export const SlideBannersBar = () => {
   return (
     <>
       <Swiper
-        className="mt-2"
+        className="my-1"
         slidesPerView={"auto"}
         spaceBetween={10}
         modules={[FreeMode]}
